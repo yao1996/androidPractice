@@ -1,2 +1,2 @@
-include ':app', ':myeventbus'
+include ':app', ':myeventbus', ':mvp'
 rootProject.name='YkqFrost'
