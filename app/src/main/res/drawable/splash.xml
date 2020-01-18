@@ -9,7 +9,7 @@
             android:gravity="center"
             android:src="@mipmap/taobao_launch_center" />
     </item>
-    <item android:bottom="48dp">
+    <item android:bottom="24dp">
         <bitmap
             android:gravity="bottom|center"
             android:src="@mipmap/taobao_launch_logo" />
