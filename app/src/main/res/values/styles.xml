@@ -15,4 +15,8 @@
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
+
+    <style name="Splash.logo" parent="Splash">
+        <item name="android:windowBackground">@drawable/splash_logo</item>
+    </style>
 </resources>
