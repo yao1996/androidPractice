@@ -30,6 +30,4 @@ public class LoginView implements IView {
             }
         }, 2000);
     }
-
-    public void set
 }
