@@ -1,6 +1,7 @@
 package com.ykq.myeventbus;
 
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 /**
  * @author ykq
@@ -10,17 +11,10 @@ public class SubscriberMethod {
 
     private Object o;
     private Method method;
-    private Class<?> paramType;
 
     public SubscriberMethod(Object o, Method method) {
         this.o = o;
         this.method = method;
-    }
-
-    public SubscriberMethod(Object o, Method method, Class<?> paramType) {
-        this.o = o;
-        this.method = method;
-        this.paramType = paramType;
     }
 
     public Object getO() {
@@ -39,11 +33,17 @@ public class SubscriberMethod {
         this.method = method;
     }
 
-    public Class<?> getParamType() {
-        return paramType;
+    @Override
+    public boolean equals(Object o1) {
+        if (this == o1) return true;
+        if (o1 == null || getClass() != o1.getClass()) return false;
+        SubscriberMethod that = (SubscriberMethod) o1;
+        return o.equals(that.o) &&
+                method.equals(that.method);
     }
 
-    public void setParamType(Class<?> paramType) {
-        this.paramType = paramType;
+    @Override
+    public int hashCode() {
+        return Objects.hash(o, method);
     }
 }
