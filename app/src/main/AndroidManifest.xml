@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.MainActivity"
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -24,7 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.HalfActivity"
-            android:theme="@style/TransparentActivity"/>
+        <activity
+            android:name=".ui.activity.HalfActivity"
+            android:theme="@style/TransparentActivity" />
+        <activity
+            android:name=".ui.activity.stack.FirstActivity"
+            android:taskAffinity="com.aaa" />
+        <activity android:name=".ui.activity.stack.SecondActivity" />
+        <activity android:name=".ui.activity.stack.ThirdActivity" />
     </application>
 </manifest>

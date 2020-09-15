@@ -1,4 +1,4 @@
-package com.ykq.ykqfrost.ui.activity;
+package com.ykq.ykqfrost.ui.activity.stack;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,29 +8,26 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.ykq.ykqfrost.R;
-import com.ykq.ykqfrost.ui.activity.stack.FirstActivity;
+import com.ykq.ykqfrost.ui.activity.BaseActivity;
 
 /**
  * @author ykq
- * @date 2019-12-27
+ * @date 2020/9/15
  */
-public class MainActivity extends BaseActivity {
+public class SecondActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView mHello = findViewById(R.id.hello);
-        mHello.setOnClickListener(v -> FirstActivity.goToPage(MainActivity.this));
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+        mHello.setText("二");
+        mHello.setOnClickListener(v -> FirstActivity.goToPage(SecondActivity.this));
     }
 
     public static void goToPage(Context context) {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, SecondActivity.class);
         context.startActivity(intent);
     }
+
 }

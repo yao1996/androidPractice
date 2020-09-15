@@ -1,5 +1,6 @@
 package com.ykq.ykqfrost.ui.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
@@ -53,6 +54,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         LogUtil.d("lifeCycle onSaveInstanceState");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        LogUtil.d("lifeCycle onNewIntent");
     }
 
     @Override
