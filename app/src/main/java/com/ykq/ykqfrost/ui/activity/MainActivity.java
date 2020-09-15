@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.ykq.myeventbus.EventBus;
 import com.ykq.ykqfrost.R;
-import com.ykq.ykqfrost.bean.MessageEvent;
+import com.ykq.ykqfrost.ui.fragment.BaseFragment;
 
 /**
  * @author ykq
@@ -17,16 +17,18 @@ import com.ykq.ykqfrost.bean.MessageEvent;
  */
 public class MainActivity extends BaseActivity {
 
-    private TextView mHello;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mHello = findViewById(R.id.hello);
-        mHello.setOnClickListener(v -> {
-            EventBus.getDefault().post(new MessageEvent());
-        });
+        TextView mHello = findViewById(R.id.hello);
+        mHello.setOnClickListener(v -> HalfActivity.goToPage(MainActivity.this));
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_lay, new BaseFragment()).commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public static void goToPage(Context context) {
