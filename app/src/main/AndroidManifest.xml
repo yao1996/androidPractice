@@ -31,7 +31,29 @@
         <activity
             android:name=".ui.activity.stack.FirstActivity"
             android:taskAffinity="com.aaa" />
-        <activity android:name=".ui.activity.stack.SecondActivity" />
-        <activity android:name=".ui.activity.stack.ThirdActivity" />
+        <activity android:name=".ui.activity.stack.SecondActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.ykq.ykqfrost" />
+
+                <data android:scheme="ykq" />
+                <data android:host="second" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.stack.ThirdActivity">
+            <intent-filter>
+                <action android:name="com.ykq.ykqfrost.Main" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.ykq.ykqfrost" />
+
+                <data android:scheme="ykq" />
+                <data android:host="third" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.InitService" />
     </application>
 </manifest>
