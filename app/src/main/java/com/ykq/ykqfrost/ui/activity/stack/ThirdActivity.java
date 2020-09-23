@@ -22,6 +22,7 @@ public class ThirdActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         TextView mHello = findViewById(R.id.hello);
         mHello.setText("三");
+        mHello.setOnClickListener(v -> ThirdActivity.goToPage(ThirdActivity.this));
     }
 
     public static void goToPage(Context context) {

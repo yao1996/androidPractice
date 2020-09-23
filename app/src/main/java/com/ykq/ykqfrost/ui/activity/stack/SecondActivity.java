@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 
 import com.ykq.ykqfrost.R;
 import com.ykq.ykqfrost.ui.activity.BaseActivity;
+import com.ykq.ykqfrost.utils.LogUtil;
 
 /**
  * @author ykq
@@ -20,6 +21,7 @@ public class SecondActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LogUtil.d("task id " + getTaskId());
         TextView mHello = findViewById(R.id.hello);
         mHello.setText("二");
         mHello.setOnClickListener(v -> FirstActivity.goToPage(SecondActivity.this));

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.ykq.ykqfrost.R;
 import com.ykq.ykqfrost.service.InitService;
+import com.ykq.ykqfrost.ui.activity.stack.FirstActivity;
 import com.ykq.ykqfrost.utils.LogUtil;
 
 import butterknife.ButterKnife;
@@ -32,7 +33,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
+        LogUtil.d("task id " + getTaskId());
         sc = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
@@ -55,6 +56,10 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    @OnClick(R.id.first_activity)
+    public void goToFirstActivity() {
+        FirstActivity.goToPage(this);
+    }
 
     @OnClick(R.id.start_service)
     public void startService() {

@@ -1,7 +1,6 @@
 package com.ykq.ykqfrost.ui.activity.stack;
 
 import android.annotation.SuppressLint;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.ykq.ykqfrost.R;
 import com.ykq.ykqfrost.ui.activity.BaseActivity;
+import com.ykq.ykqfrost.utils.LogUtil;
 
 /**
  * @author ykq
@@ -26,6 +26,7 @@ public class FirstActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LogUtil.d("task id " + getTaskId());
         mHello = findViewById(R.id.hello);
         mHello.setOnClickListener(v -> SecondActivity.goToPage(FirstActivity.this));
         mHello.setText("一：" + num);

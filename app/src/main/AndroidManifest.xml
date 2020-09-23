@@ -30,6 +30,7 @@
             android:theme="@style/TransparentActivity" />
         <activity
             android:name=".ui.activity.stack.FirstActivity"
+            android:launchMode="singleTask"
             android:taskAffinity="com.aaa" />
         <activity android:name=".ui.activity.stack.SecondActivity">
             <intent-filter>
@@ -42,7 +43,9 @@
                 <data android:host="second" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.stack.ThirdActivity">
+        <activity
+            android:name=".ui.activity.stack.ThirdActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.ykq.ykqfrost.Main" />
 
