@@ -56,7 +56,9 @@
                 <data android:host="third" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.AIDLActivity" />
 
-        <service android:name=".service.InitService" />
+        <service android:name=".service.InitService"
+            android:process=":remote"/>
     </application>
 </manifest>
