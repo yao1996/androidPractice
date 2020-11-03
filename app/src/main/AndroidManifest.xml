@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ykq.ykqfrost">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".AppContext"
         android:allowBackup="true"
@@ -57,8 +61,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.AIDLActivity" />
+        <activity android:name=".ui.activity.PhotoWallActivity" />
 
-        <service android:name=".service.InitService"
-            android:process=":remote"/>
+        <service
+            android:name=".service.InitService"
+            android:process=":remote" />
     </application>
 </manifest>

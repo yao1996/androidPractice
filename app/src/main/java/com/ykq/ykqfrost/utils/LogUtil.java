@@ -19,6 +19,10 @@ public class LogUtil {
         Log.d(TAG, buildMessage(true, msg));
     }
 
+    public static void w(String msg) {
+        Log.w(TAG, buildMessage(false, msg));
+    }
+
     private static String buildMessage(boolean logStack, String msg) {
         StackTraceElement caller = new Throwable().fillInStackTrace().getStackTrace()[2];
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
